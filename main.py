@@ -66,7 +66,8 @@ def play_game():
             else:
                 row, col = bot_move(board)
                 print(f"Bot wybiera: {row} {col}")
-                
+
+            # Zapis ruchu na planszy
             board[row][col] = "X" if player_turn else "O"
             
             if check_winner(board, "X" if player_turn else "O"):
@@ -84,5 +85,6 @@ def play_game():
         if input("Chcesz zagrać ponownie? (tak/nie): ").lower() != "tak":
             break
 
+# Uruchomienie gry jesli skrypt jesty wykonywany jako glowny program
 if __name__ == "__main__":
     play_game()
