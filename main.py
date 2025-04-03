@@ -21,9 +21,11 @@ def check_winner(board, player):
     
     return False
 
+# Funkcja zwracająca listę dostępnych ruchów
 def get_available_moves(board):
     return [(r, c) for r in range(3) for c in range(3) if board[r][c] == " "]
 
+# Funkcja określająca ruch bota na podstawie strategii
 def bot_move(board):
     for player in ["O", "X"]:
         for row, col in get_available_moves(board):
