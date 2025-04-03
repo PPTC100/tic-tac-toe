@@ -34,7 +34,8 @@ def bot_move(board):
                 board[row][col] = " "
                 return row, col
             board[row][col] = " "
-    
+
+     # Priorytetowe zajmowanie planszy
     if (1, 1) in get_available_moves(board):
         return 1, 1
     
@@ -61,6 +62,7 @@ def play_game():
                 except (ValueError, IndexError):
                     print("Nieprawidłowe dane. Podaj dwie liczby od 0 do 2.")
                     continue
+            # Ruch bota        
             else:
                 row, col = bot_move(board)
                 print(f"Bot wybiera: {row} {col}")
